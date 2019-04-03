@@ -76,6 +76,10 @@ footer {
   display: inline-block;
 }
 
+.description span {
+  font-size: 75px;
+  color: #fff;
+}
 
 
 /* Work Experience
