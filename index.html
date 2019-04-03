@@ -17,8 +17,17 @@
             <div class="column-wide">
               <h1>Gabriel Maia</h1>
               <h2>Programmer</h2>
-              <p>Etiam lobortis quam nec bibendum aliquam. Phasellus non erat tempor, bibendum mi sit amet, blandit velit.
-                  Aliquam nisl felis, sagittis sit amet ullamcorper nec, convallis eu ligula.</p>
+              <span id="typed"></span>
+                    <script>
+                      var typed = new Typed('#typed', {
+                        stringsElement: '#typed-strings',
+                        strings:["I love you","I hate you","I love","but","I hate"],
+                        backSpeed: 40,
+                        typeSpeed: 40,
+                        showCursor: false,
+                        loop: true
+                      });
+                    </script>
             </div>
         </div>
     </header>
@@ -91,5 +100,6 @@
             <p>Copyright 2019 by Gabriel Maia</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </body>
 </html>
