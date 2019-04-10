@@ -7,94 +7,158 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script type="text/javascript" src="js/type.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <link rel="icon" href="pic/laptop.png">
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- // Intro -->
     <header>
         <div class="content-wrap">
+            <a href= "https://github.com/gcmaia" ><img class="github" src="pic/github.png" alt="Github"/></a>
+            <a href= "https://www.facebook.com/gabriel.c.maia" ><img class="facebook" src="pic/facebook.png" alt="facebook"/></a>
+            <a href= "https://www.linkedin.com/in/gcmaia/" ><img class="linkedin" src="pic/linkedin.png" alt="linkedin"/></a>
             <img class="profile-img column-narrow" src="pic/profile.jpg" alt="Gabriel Maia">
-            
             <div class="column-wide">
-              <h1>Gabriel Maia</h1>
-              <h2>Computer Programmer</h2>
-	          <h3>I'm Probably: <b id="typed"></b></h3>
-			
+              <h1>Gabriel Maia </h1>
+              <h2>Computer Programmer </h2>
+	          <h3>I'm Probably: <a href="https://mattboldt.com/typed.js/" style="text-decoration:none"><b id="typed"></b></a></h3>
             </div>
         </div>
     </header>
     
     <main> 
         <!-- // Work Experience -->
-        <section class="work">
-            <div class="content-wrap">
-                <h2>Work Experience</h2>
-
-                <!-- Work Info #1 -->
-                <div class="column-narrow">
-                    <h3>Coop Analyst</h3>
-                    <p>MNP LLP</p>
-                    <p>January 2019 - Present</p>
-                </div>
-                <div class="column-wide">
-                    <p>Etiam lobortis quam nec bibendum aliquam. Phasellus non erat tempor, bibendum mi sit amet, blandit velit.
-                    Aliquam nisl felis, sagittis sit amet ullamcorper nec, convallis eu ligula.</p>
-                </div>
-                
-                <!-- Work Info #2 -->
-                <div class="column-narrow">
-                    <h3>Tutor</h3>
-                    <p>Algonquin College</p>
-                    <p>February 2018 - Present</p>
-                </div>
-                <div class="column-wide">
-                    <p>Etiam lobortis quam nec bibendum aliquam. Phasellus non erat tempor, bibendum mi sit amet, blandit velit.
-                    Aliquam nisl felis, sagittis sit amet ullamcorper nec, convallis eu ligula.</p>
-                </div>
-                
+        <section class="bio">
+            <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'Bio')" id="default">Bio</button>
+              <button class="tablinks" onclick="openCity(event, 'Certifications')">Certifications</button>
+              <button class="tablinks" onclick="openCity(event, 'Projects')">Projects</button>
             </div>
-        </section>
+            
+            <div id="Bio" class="tabcontent">
+              <h3>Bio</h3>
+              <p><b>I'm Gabriel Maia, 22 Years, and this is my try to make my resume look a bit more fancier. I'm from Brazil but moved to Canda in 2017</b></p>
+            </div>
+            
+            <div id="Certifications" class="tabcontent">
+              <h3>Certifications</h3>
+              <a href="">MB2-716 -- Microsoft Dynamics 365 Customization and Configuration -- 2019</a>
+            </div>
+            
+            <div id="Projects" class="tabcontent">
+              <h3>Favorite Projects</h3>
+              <p> :D </p>
+            </div>
+            
+            <script>
+            function openCity(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+            
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("default").click();
+            </script>
+
+        
+    </section>
 
 
         <!-- // Education -->
-        <section class="education">
-            <div class="content-wrap">
-                <h2>Education</h2>
-
-                <!-- Education Info #1 -->
-                <h3>Algonquin College - Ottawa, ON, CA</h3>
-                <h4>Computer Programming Degree, 2017 - 2019</h4>
-                <p>2 year full time program.</p>
-                
-                <!-- Education Info #1 -->
-                <h3>Universidade Federal Rural de Pernambuco (UFRPE) - Recife, PE, BR</h3>
-                <h4>Computer Programming Degree, 2015 - 2017 (INCOMPLETE) </h4>
-                <p>4 year full time program.</p>
-    
-            </div>
+        <section class="work">
+                <div class="content-wrap">
+                        <h2>Work Experience</h2>
+        
+                        <!-- Work Info #1 -->
+                        <div class="column-narrow">
+                            <h3>Programming Tutor</h3>
+                            <p>Independent</p>
+                            <p>April 2019 - Present</p>
+                        </div>
+                        <div class="column-wide">
+                                <br><br>
+                            <ul>
+                                <li>Android</li>
+                                <li>Java</li>
+                                <li>Database</li>
+                            </ul>
+                        </div>
+        
+                        <!-- Work Info #2 -->
+                        <div class="column-narrow">
+                            <h3>Coop Analyst</h3>
+                            <p>MNP LLP</p>
+                            <p>January 2019 - Present</p>
+                        </div>
+                        <div class="column-wide">
+                                <br><br>
+                            <ul>
+                                <li>More than 100 hours helping students finish many different problems</li>
+                                <li>Taught different courses like Introductory Java, Android, Database</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Work Info #3 -->
+                        <div class="column-narrow">
+                            <h3>College Tutor</h3>
+                            <p>Algonquin College</p>
+                            <p>February 2018 - Present</p>
+                        </div>
+                        <div class="column-wide">
+                            <br><br>
+                                <ul>
+                                    <li>More than 100 hours helping students finish many different problems</li>
+                                    <li>Taught different courses like Introductory Java, Android, Database</li>
+                                </ul>
+                        </div>
+                        
+                    </div>
+            
         </section>
     </main>
-    
+        <section class="education">
+                <div class="content-wrap">
+                        <h2>Education</h2>
+        
+                        <!-- Education Info #1 -->
+                    <div class="study-wrap">
+                        <h3>Algonquin College - Ottawa, ON, CA</h3>
+                        <h4><a href="https://www.algonquincollege.com/sat/program/computer-programmer/#courses">Computer Programming Degree, 2017 - 2019</a></h4>
+                        <h5>Cumulative GPA: 3.76 -- Dean's Honours List: Winter 2017 (1st term) & Winter 2018 (3rd term)</h5>
+                    </div>
+                    <div class="study-wrap">
+                        <!-- Education Info #1 -->
+                        <h3>Universidade Federal Rural de Pernambuco (UFRPE) - Recife, PE, BR</h3>
+                        <h4>Computer Programming Degree, 2015 - 2017 (INCOMPLETE) </h4>
+                    </div>
+        </section>
     <!-- // Footer & contact info -->
     <footer>
         <div class="content-wrap">
-            <h2>Want to get in touch?</h2>
+            <h2>How to contact me</h2>
             
             <!-- Social media and contact links. Add or remove any networks. -->
             <div class="contact-info">
-		<a href="mailto:gabriel.cardosomaia@gmail.com">email</a>
-                <a href="https://github.com/GCMaia">Github Projects</a>
-                <a href="https://www.linkedin.com/in/gcmaia/">LinkedIn</a>
-		<a href="https://www.facebook.com/gabriel.c.maia">Faceboook</a>
-		<img id="gmailLogo" src="pic/gmail.png" alt="Gmail" />       
-		<img id="gitLogo" src="pic/github.png" alt="Github Repo" />       
-		<img id="linkedinLogo" src="pic/linkedin.png" alt="Linkein" />       
-		<img id="facebookLogo" src="pic/facebook.png" alt="Facebook" />    
+                <p><a href="mailto:gabriel.cardosomaia@gmail.com">Email: gabriel.cardosomaia@gmail.com</a><br><br>Cellphone: +1 (613) 668-8481</p>  
             </div>
-
-            <p>Copyright 2019 by Gabriel Maia</p>
+            <div class="copyright">
+                <p>pictures and logos from <a href="https://icons8.com/" color: #FFFF>icons8</a><br>Copyright 2019 by Gabriel Maia </p>
+            </div>
         </div>
     </footer>
 </body>

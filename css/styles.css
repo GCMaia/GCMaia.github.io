@@ -5,34 +5,48 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
-a {
-    color: #FFFFFF;
-}
-a:hover {
+h4 a {
     text-decoration: none;
+    color: black;
 }
+
 h1, h2 {
-  font-family: 'Caveat', cursive;
+  font-family: 'Arial', Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 h1 {
-  font-size: 80px;
+  font-size: 70px;
 }
 h2 {
   font-size: 40px;
   margin-top: 0;
 }
+
+h3 a {
+  color: #8D99AE;
+}
+
+.study-wrap h3 a {
+  color: black;
+  text-decoration: none;
+}
+
 .content-wrap {
   max-width: 950px;
-  margin: 0 auto;
-  padding: 50px;
+  margin: auto;
+  padding: 55px;
   overflow: hidden;
+}
+
+.study-wrap {
+  padding-bottom: 1px;
+  
 }
 
 .column-narrow {
   width: 35%;
   float: left;
-  padding-right: 3%;
+  padding-right: 2%;
   min-height: 150px;
 }
 .column-wide {
@@ -57,8 +71,23 @@ header h2 {
 }
 
 /* Header styles only */
-header {
-  /*text-align: center;*/
+.github{
+  position: absolute;
+  width: 2.07%;
+  top: 15px;
+  right: 310px;  
+}
+.facebook{
+  position: absolute;
+  width: 2%;
+  top: 15px;
+  right: 350px;   
+}
+.linkedin{
+  position: absolute;
+  width: 2%;
+  top: 15px;
+  right: 390px;   
 }
 .profile-img {
   /*width: 300px;*/
@@ -71,26 +100,76 @@ header {
 footer {
   text-align: center;
 }
-.contact-info a {
-  padding: 10px;
+
+footer a{
+  text-decoration: none;
+  color: #8D99AE;
+}
+
+.contact-info p {
+  padding: 5x;
   display: inline-block;
 }
 
-.description span {
-  font-size: 75px;
-  color: #fff;
+.copyright {
+  position: absolute;
+  font-size: 12px;
+  color: #FFFF;
+  right: 10px;
 }
 
 
 /* Work Experience
 ------------------------------------*/
-.work {
+.bio {
     background: #EDF2F4;
+    text-align: center;
 }
 
+.education {
+  background: #668586;
+}
 
 /* Education
 ------------------------------------*/
-.education {
+.work {
     background: #8D99AE;
+}
+
+/* TABS CONTENT --------------------- */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
