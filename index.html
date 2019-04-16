@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi! That's my Resume :)</title>
+    <link rel="icon" href="pic/laptop.png">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script type="text/javascript" src="js/type.js"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <link rel="icon" href="pic/laptop.png">
     <!--<link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">-->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -119,53 +116,11 @@
                         <div id="myProgress"><div class="testingBar" id="python"></div></div>
                     </div>
                 </div>
+                
             </div>
-
+            <br>
+            <p><b> This is more of a "confidence-meter". Want to be sure I meet your requirements/needs? Press on the skill and I'll try to show a bit more :)</b></p>
         </div>
-
-        <script>
-            function openInfo(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-
-                if (cityName == 'Languages' || cityName == 'Skills') {
-
-                    var elem = document.getElementsByClassName("testingBar");
-                    for (i = 0; i < elem.length; i++) {
-                        var width = 1;
-                        var id = setInterval(frame, 40);
-                        function frame() {
-                            if (width >= 100) {
-                                clearInterval(id);
-                            } else {
-                                width++;
-                                elem[0].style.width = width + '%';
-                                elem[1].style.width = width + '%';
-                                elem[2].style.width = width + '%';
-                                elem[3].style.width = width + '%';
-                                elem[4].style.width = width + '%';
-                                elem[5].style.width = width + '%';
-                                elem[6].style.width = width + '%';
-                                elem[7].style.width = width + '%';
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("default").click();
-        </script>
-
 
     </section>
 
