@@ -3,8 +3,8 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
 }
+
 h4 a {
     text-decoration: none;
     color: black;
@@ -120,7 +120,8 @@ footer a{
 
 /* bio------------------------------------*/
 .bio {
-    text-align: center;
+  
+  text-align: center;
 }
 
 #PersonalText {
@@ -165,6 +166,12 @@ footer a{
   background-color: rgb(223, 124, 12);
 }
 
+#microsoft {
+  width: 3%;
+  height: 20px;
+  background-color: rgb(84, 16, 161);
+}
+
 /*------------SKILLS-----------*/
 
 .Skills-Content1 {
@@ -198,7 +205,7 @@ footer a{
 
 
 .education {
-  background: #668586;
+  background: #247053;
   color: black;
 }
 
@@ -260,10 +267,9 @@ footer a{
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  vertical-align: middle;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(255, 255, 255);
   border-top: none;
+  min-height: 180px;
 }
-
-/* Testing */
