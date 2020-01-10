@@ -5,7 +5,7 @@ $(document).ready(function(){
 		strings: ['Seeing something new @ MNP ' ,'Playing something', 'Excited for the new Avengers Movie',
 		'Getting frustrated while coding','Getting amazed while coding' ,'Talking to some friends', 'Learning something new', 
 		'Trying to help someone', 'Understanding some new microsoft tool', 'looking for some spiderman content', 'Giving some tutoring', 
-		'Trying to cook something different', 'Forgetting about something important', 'Finishing my course @ Algonquin College', 'Watching some Marvel Movie',
+		'Trying to cook something different', 'Forgetting about something important', 'Watching some Marvel Movie',
 		'Writting hello world in a new language :)'],
 		typeSpeed: 25,
 		backSpeed: 15, 
@@ -43,8 +43,8 @@ function openInfo(evt, cityName) {
 					clearInterval(id);
 				} else {
 					width++;
-					elem[0].style.width = width + '%';
-					elem[1].style.width = width + '%';
+					elem[0].style.width = 80 + '%';
+					elem[1].style.width = 80 + '%';
 					elem[2].style.width = width + '%';
 					elem[3].style.width = width + '%';
 					elem[4].style.width = width + '%';
