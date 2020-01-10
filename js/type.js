@@ -43,14 +43,14 @@ function openInfo(evt, cityName) {
 					clearInterval(id);
 				} else {
 					width++;
-					elem[0].style.width = 80 + '%';
-					elem[1].style.width = 80 + '%';
-					elem[2].style.width = width + '%';
-					elem[3].style.width = width + '%';
-					elem[4].style.width = width + '%';
-					elem[5].style.width = width + '%';
-					elem[6].style.width = width + '%';
-					elem[7].style.width = width + '%';
+					elem[0].style.width = 100 + '%';
+					elem[1].style.width = 100 + '%';
+					elem[2].style.width = 80 + '%';
+					elem[3].style.width = 75 + '%';
+					elem[4].style.width = 75 + '%';
+					elem[5].style.width = 60 + '%';
+					elem[6].style.width = 50 + '%';
+					elem[7].style.width = 80 + '%';
 				}
 			}
 		}
