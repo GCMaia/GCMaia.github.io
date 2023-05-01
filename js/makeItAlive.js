@@ -5,8 +5,7 @@ $(document).ready(function(){
 		strings: ['Seeing something new @ MNP ' ,'Playing something', 'Watching some SpiderMan Movie',
 		'Getting frustrated while coding','Getting amazed while coding' ,'Talking to some friends', 'Learning something new', 
 		'Trying to help someone', 'Understanding some new microsoft tool', 'looking for some spiderman content', 'Giving some tutoring', 
-		'Trying to cook something different', 'Forgetting about something important', 'Watching some Marvel Movie',
-		'Writting hello world in a new language :)'],
+		'Trying to cook something different', 'Forgetting about something important', 'Watching some Marvel Movie'],
 		typeSpeed: 25,
 		backSpeed: 15, 
 		loop: true, 
@@ -33,14 +32,15 @@ function openInfo(evt, tabName) {
 	evt.currentTarget.className += " active";
 
     if (tabName == 'Languages') {
-        var languageItems = ["intermediate", ""];
-        var elem = document.getElementsByClassName("testingBar");
+		var languageItems = ["intermediate", "advanced"];
+        var elem = document.getElementsByClassName("languageBar");
         for (i = 0; i < languageItems.length; i++) {
             
 
 
 
-        }
+		}
+
     } else if (tabName == 'Skills') {
         var skillItems = [];
         var elem = document.getElementsByClassName("testingBar");
