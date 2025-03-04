@@ -132,11 +132,12 @@ footer a{
 }
 
 #myProgress {
-  position: relative;
-  left: 43%;
-  width: 15%;
-  background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
 }
+
 
 /*bars*/
 
