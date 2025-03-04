@@ -213,15 +213,15 @@ progress {
 
 /* Individual progress bar colors */
 .portLang progress::-webkit-progress-value {
-    background-color: rgb(76, 127, 175); /* Portuguese bar color */
+    background-color: rgb(76, 175, 97); /* Portuguese bar color */
 }
 
 .engLang progress::-webkit-progress-value {
-    background-color: rgb(76, 175, 97); /* English bar color */
+    background-color: rgb(218, 214, 22); /* English bar color */
 }
 
 .frenchLang progress::-webkit-progress-value {
-    background-color: rgb(218, 214, 22); /* French bar color */
+    background-color: rgb(76, 127, 175); /* French bar color */
 }
 
 .espLang progress::-webkit-progress-value {
