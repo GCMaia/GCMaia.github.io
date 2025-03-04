@@ -165,6 +165,14 @@ footer a{
   color: white;
 }
 
+#portLang {
+    width: 3%;
+    height: 20px;
+    background-color: rgb(76, 175, 97);
+    line-height: 20px;
+    color: white;
+}
+
 #python {
   width: 3%;
   height: 20px;
