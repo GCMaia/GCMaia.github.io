@@ -132,25 +132,13 @@ footer a{
 }
 
 #myProgress {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ddd;
-    max-width: 300px;
-    width: 100%;
-
+  position: relative;
+  left: 43%;
+  width: 15%;
+  background-color: #ddd;
 }
-
 
 /*bars*/
-
-.languageBar {
-    width: 3%;
-    height: 20px;
-    background-color: rgb(76, 127, 175);
-    line-height: 20px;
-    color: white;
-}
 
 #advanced {
   width: 3%;
@@ -168,15 +156,36 @@ footer a{
   color: white;
 }
 
-#portLang {
-    width: 3%;
-    height: 20px;
-    background-color: rgb(76, 175, 97);
-    line-height: 20px;
-    color: white;
+.languageBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px; /* Adjust as needed for spacing */
 }
 
-#python {
+.portLang, .engLang, .frenchLang, .espLang {
+    position: relative;
+    max-width: 500px; /* Adjust the maximum width as needed */
+    width: 100%;
+    text-align: center;
+}
+
+.progress {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px; /* Adjust the height as needed */
+}
+
+.progressText {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: 20px; /* Adjust to match the height of the progress bar */
+    text-align: center;
+    color: black; /* Adjust text color as needed */
+    font-weight #python {
   width: 3%;
   height: 20px;
   background-color: rgb(218, 214, 22);
