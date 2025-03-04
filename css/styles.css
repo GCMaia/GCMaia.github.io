@@ -141,6 +141,14 @@ footer a{
 
 /*bars*/
 
+.languageBar {
+    width: 3%;
+    height: 20px;
+    background-color: rgb(76, 127, 175);
+    line-height: 20px;
+    color: white;
+}
+
 #advanced {
   width: 3%;
   height: 20px;
