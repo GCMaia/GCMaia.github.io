@@ -30,22 +30,6 @@ function openInfo(evt, tabName) {
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 
-    if (tabName == 'Languages') {
-		var languageItems = ["intermediate", "advanced"];
-        var elem = document.getElementsByClassName("languageBar");
-        for (i = 0; i < languageItems.length; i++) {
-            
-
-
-
-		}
-
-    } else if (tabName == 'Skills') {
-        var skillItems = [];
-        var elem = document.getElementsByClassName("testingBar");
-        //var elem = document.getElementsByClassName("testingBar").item.style.width
-
-    }
 }
 
 // Get the element with id="defaultOpen" and click on it
