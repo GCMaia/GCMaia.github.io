@@ -185,7 +185,10 @@ footer a{
     line-height: 20px; /* Adjust to match the height of the progress bar */
     text-align: center;
     color: black; /* Adjust text color as needed */
-    font-weight #python {
+    font-weight: bold;
+}
+    
+#python {
   width: 3%;
   height: 20px;
   background-color: rgb(218, 214, 22);
