@@ -95,38 +95,8 @@ header h2 {
   /*margin-right: 30px;*/
 }
 
-.languageBarContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px; /* Adjust as needed for spacing */
-}
-
-.portLang, .engLang, .frenchLang, .espLang {
-    position: relative;
-    max-width: 500px; /* Adjust the maximum width as needed */
-    width: 100%;
-    text-align: center;
-}
-
-.progress {
-    width: 100%;
-    background-color: #ddd;
-    height: 20px; /* Adjust the height as needed */
-}
-
-.progressText {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    line-height: 20px; /* Adjust to match the height of the progress bar */
-    text-align: center;
-    color: black; /* Adjust text color as needed */
-    font-weight:
-    /* Footer styles only */
-    footer {
+/* Footer styles only */
+footer {
   text-align: center;
 }
 
@@ -168,7 +138,7 @@ footer a{
     background-color: #ddd;
     max-width: 300px;
     width: 100%;
-    background-color: #ddd;
+
 }
 
 
