@@ -40,7 +40,6 @@ h3 a {
 
 .study-wrap {
   padding-bottom: 1px;
-  
 }
 
 .column-narrow {
@@ -55,8 +54,6 @@ h3 a {
   min-height: 150px;
 }
 
-
-
 /* Header & Footer 
 ------------------------------------*/
 header, 
@@ -64,35 +61,49 @@ footer {
   background: #2B2D42;
   color: #8D99AE;
 }
+
+header {
+  min-height: 425px;  /* Added fixed minimum height */
+  position: relative; /* Added for proper positioning */
+  padding: 20px 0;   /* Added padding */
+}
+
 header h1,
 header h2 {
     color: #EDF2F4;
 }
 
 /* Header styles only */
-.github{
+.social-icons {
   position: absolute;
-  width: 2.07%;
-  top: 15px;
-  right: 310px;  
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
 }
-.facebook{
-  position: absolute;
-  width: 2%;
-  top: 15px;
-  right: 350px;   
+
+.github,
+.linkedin {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
 }
-.linkedin{
-  position: absolute;
-  width: 2%;
-  top: 15px;
-  right: 390px;   
+
+.github:hover,
+.linkedin:hover {
+  transform: scale(1.1);
 }
+
 .profile-img {
-  /*width: 300px;*/
   border-radius: 50%;
-  /*float: left;*/
-  /*margin-right: 30px;*/
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.column-wide h3 {
+  min-height: 40px; /* Added minimum height for the typing text */
+  margin: 10px 0;  /* Added margin */
 }
 
 /* Footer styles only */
@@ -116,7 +127,6 @@ footer a{
   color: #FFFF;
   right: 1%;
 }
-
 
 /* bio------------------------------------*/
 .bio {
@@ -161,12 +171,12 @@ footer a{
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: 10px; /* Adjust as needed for spacing */
+    margin-bottom: 10px;
 }
 
 .portLang, .engLang, .frenchLang, .espLang {
     position: relative;
-    max-width: 600px; /* Adjust the maximum width as needed */
+    max-width: 400px; /* Reduced from 600px */
     width: 100%;
     text-align: center;
 }
@@ -176,56 +186,87 @@ footer a{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 30px; /* Increase height as needed */
+    height: 20px; /* Reduced from 30px */
     background-color: #ddd;
     position: relative;
+    border-radius: 10px; /* Added rounded corners */
+    overflow: hidden; /* Ensure the progress bar stays within the container */
 }
 
 progress {
     width: 100%;
-    height: 30px; /* Increase height as needed */
+    height: 20px;
     -webkit-appearance: none;
     appearance: none;
+    border: none;
+    background-color: transparent;
 }
 
-    progress::-webkit-progress-bar {
-        background-color: #ddd;
-    }
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
 
-    progress::-webkit-progress-value {
-        transition: width 0.2s ease;
-    }
+progress::-webkit-progress-value {
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
 
-    progress::-moz-progress-bar {
-        transition: width 0.2s ease;
-    }
+progress.animate::-webkit-progress-value {
+    width: 100%;
+}
+
+progress::-moz-progress-bar {
+    border-radius: 10px;
+    width: 0; /* Start at 0 */
+}
+
+progress.animate::-moz-progress-bar {
+    transition: width 2s ease-in-out;
+    width: 100%;
+}
 
 .progressText {
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    line-height: 30px; /* Adjust to match the height of the progress bar */
+    line-height: 20px; /* Adjusted to match new height */
     text-align: center;
-    color: black; /* Adjust text color as needed */
+    color: black;
     font-weight: bold;
+    font-size: 12px; /* Added smaller font size */
 }
 
-/* Individual progress bar colors */
+/* Individual progress bar colors with animation */
 .portLang progress::-webkit-progress-value {
-    background-color: rgb(76, 175, 97); /* Portuguese bar color */
+    background-color: rgb(76, 175, 97);
+    animation: fillProgress 2s ease-in-out forwards;
 }
 
 .engLang progress::-webkit-progress-value {
-    background-color: rgb(218, 214, 22); /* English bar color */
+    background-color: rgb(218, 214, 22);
+    animation: fillProgress 2s ease-in-out forwards;
 }
 
 .frenchLang progress::-webkit-progress-value {
-    background-color: rgb(76, 127, 175); /* French bar color */
+    background-color: rgb(76, 127, 175);
+    animation: fillProgress 2s ease-in-out forwards;
 }
 
 .espLang progress::-webkit-progress-value {
-    background-color: rgb(223, 124, 12); /* Spanish bar color */
+    background-color: rgb(223, 124, 12);
+    animation: fillProgress 2s ease-in-out forwards;
+}
+
+/* Keyframes for the animation */
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 #python {
@@ -273,9 +314,7 @@ progress {
 
 }
 
-
 /*----------------------------*/
-
 
 .education {
   background: #247053;
@@ -305,8 +344,6 @@ progress {
   width: 50%;
   min-height: 150px;
 }
-
-
 
 /* TABS CONTENT --------------------- */
 /* Style the tab */
@@ -345,4 +382,507 @@ progress {
   border: 1px solid rgb(255, 255, 255);
   border-top: none;
   min-height: 180px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  .content-wrap {
+    padding: 20px;
+  }
+  
+  .column-narrow,
+  .column-wide {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .social-icons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+  
+  .github,
+  .linkedin {
+    width: 25px;
+    height: 25px;
+  }
+  
+  #myProgress {
+    left: 0;
+    width: 100%;
+  }
+  
+  .languageBarContainer {
+    margin: 0 20px;
+  }
+  
+  .portLang, .engLang, .frenchLang, .espLang {
+    max-width: 300px; /* Even smaller on mobile */
+  }
+  
+  .Skills-Content-Row {
+    flex-direction: column;
+  }
+  
+  .Skills-Content-Column1,
+  .Skills-Content-Column2 {
+    width: 100%;
+  }
+  
+  .tab button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .copyright {
+    position: static;
+    margin-top: 20px;
+  }
+  
+  .work .column-narrow,
+  .work .column-wide {
+    width: 100%;
+    min-height: auto;
+    padding: 10px 0;
+  }
+  
+  .work .column-narrow {
+    text-align: center;
+  }
+  
+  .work .column-wide {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .work ul {
+    padding-left: 20px;
+  }
+  
+  header {
+    min-height: 450px; /* Increased height for mobile */
+  }
+  
+  .column-wide h3 {
+    min-height: 60px; /* Increased height for mobile */
+  }
+  
+  .progressContainer {
+    height: 18px; /* Slightly smaller on mobile */
+  }
+  
+  progress {
+    height: 18px;
+  }
+  
+  .progressText {
+    line-height: 18px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .content-wrap {
+    padding: 10px;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .tab button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  #PersonalText {
+    padding: 15px;
+  }
+  
+  .work .column-wide {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .work ul {
+    padding-left: 15px;
+  }
+  
+  .work h3 {
+    font-size: 18px;
+  }
+  
+  header {
+    min-height: 450px; /* Further increased height for small mobile */
+  }
+  
+  .column-wide h3 {
+    min-height: 80px; /* Further increased height for small mobile */
+  }
+  
+  .social-icons {
+    top: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+  
+  .github,
+  .linkedin {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .portLang, .engLang, .frenchLang, .espLang {
+    max-width: 250px; /* Smallest on mobile */
+  }
+  
+  .progressContainer {
+    height: 16px; /* Smallest on mobile */
+  }
+  
+  progress {
+    height: 16px;
+  }
+  
+  .progressText {
+    line-height: 16px;
+    font-size: 10px;
+  }
+}
+
+/* Languages section */
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.language-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.languageBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.portLang, .engLang, .frenchLang, .espLang {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    border-radius: 10px;
+    width: 0; /* Start at 0 */
+}
+
+progress.animate::-webkit-progress-value {
+    transition: width 2s ease-in-out;
+    width: 100%;
+}
+
+progress::-moz-progress-bar {
+    border-radius: 10px;
+    width: 0; /* Start at 0 */
+}
+
+progress.animate::-moz-progress-bar {
+    transition: width 2s ease-in-out;
+    width: 100%;
+}
+
+.progressText {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Individual progress bar colors */
+.portLang progress::-webkit-progress-value {
+    background-color: rgb(76, 175, 97);
+}
+
+.engLang progress::-webkit-progress-value {
+    background-color: rgb(218, 214, 22);
+}
+
+.frenchLang progress::-webkit-progress-value {
+    background-color: rgb(76, 127, 175);
+}
+
+.espLang progress::-webkit-progress-value {
+    background-color: rgb(223, 124, 12);
+}
+
+@media screen and (max-width: 768px) {
+    .languages-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .language-column {
+        min-width: 250px;
+        max-width: 100%;
+    }
+    
+    .progressContainer {
+        height: 18px;
+    }
+    
+    progress {
+        height: 18px;
+    }
+    
+    .progressText {
+        line-height: 18px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .languages-container {
+        gap: 10px;
+    }
+    
+    .language-column {
+        min-width: 200px;
+    }
+    
+    .progressContainer {
+        height: 16px;
+    }
+    
+    progress {
+        height: 16px;
+    }
+    
+    .progressText {
+        line-height: 16px;
+        font-size: 10px;
+    }
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.skills-column h3 {
+    color: #2B2D42;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.skill-item {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.skill-header b {
+    font-size: 16px;
+    color: #2B2D42;
+}
+
+.skill-level {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.skill-progress.animate {
+    width: var(--progress);
+}
+
+/* Language-specific colors */
+.skill-progress[data-level="100"] {
+    background-color: #4CAF50; /* Green for Native/Professional */
+}
+
+.skill-progress[data-level="75"] {
+    background-color: #2196F3; /* Blue for Advanced */
+}
+
+.skill-progress[data-level="25"] {
+    background-color: #FFC107; /* Yellow for Intermediate */
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        gap: 30px;
+    }
+    
+    .skills-column {
+        min-width: 250px;
+    }
+    
+    .skills-column h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-container {
+        gap: 20px;
+    }
+    
+    .skills-column {
+        min-width: 200px;
+    }
+    
+    .skill-header b {
+        font-size: 14px;
+    }
+    
+    .skill-level {
+        font-size: 12px;
+    }
+}
+
+/* Language Switch */
+.language-switch {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#langSwitch {
+    background-color: #2B2D42;
+    color: #EDF2F4;
+    border: 2px solid #EDF2F4;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#langSwitch:hover {
+    background-color: #EDF2F4;
+    color: #2B2D42;
+}
+
+@media screen and (max-width: 768px) {
+    .language-switch {
+        top: 15px;
+        left: 15px;
+    }
+    
+    #langSwitch {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .language-switch {
+        top: 10px;
+        left: 10px;
+    }
+    
+    #langSwitch {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
 }

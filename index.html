@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi! This is my Resume</title>
     <link rel="icon" href="pic/laptop.png">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <!-- Load jQuery first -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Then load other scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="text/javascript" src="js/makeItAlive.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--<link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">-->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -20,20 +21,18 @@
     <!-- // Intro -->
     <header>
         <div class="content-wrap">
-            <a href="https://github.com/gcmaia"><img class="github" src="pic/github.png" alt="Github" /></a>
-            <a href="https://www.facebook.com/gabriel.c.maia">
-                <img class="facebook" src="pic/facebook.png"
-                     alt="facebook" />
-            </a>
-            <a href="https://www.linkedin.com/in/gcmaia/">
-                <img class="linkedin" src="pic/linkedin.png"
-                     alt="linkedin" />
-            </a>
+            <div class="language-switch">
+                <button id="langSwitch" onclick="toggleLanguage()">PT</button>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/gcmaia"><img class="github" src="pic/github.png" alt="Github" /></a>
+                <a href="https://www.linkedin.com/in/gcmaia/"><img class="linkedin" src="pic/linkedin.png" alt="linkedin" /></a>
+            </div>
             <img class="profile-img column-narrow" src="pic/profile.jpg" alt="Gabriel Maia">
             <div class="column-wide">
                 <h1>Gabriel Maia </h1>
-                <h2>Computer Programmer </h2>
-                <h3>I'm Probably: <b id="typed"></b></h3>
+                <h2 data-en="D365 Developer and Consultant" data-pt="Desenvolvedor e Consultor D365">D365 Developer and Consultant</h2>
+                <h3 data-en="I'm Probably:" data-pt="Provavelmente estou:">I'm Probably: <b id="typed"></b></h3>
             </div>
         </div>
     </header>
@@ -42,33 +41,30 @@
     <!-- // Tabs -->
     <section class="bio">
         <div class="tab">
-            <button class="tablinks" onclick="openInfo(onclick, 'Personal')" id="default">Bio</button>
-            <button class="tablinks" onclick="openInfo(onclick, 'Certifications')">Certifications</button>
-            <button class="tablinks" onclick="openInfo(onclick, 'Projects')">Projects</button>
-            <button class="tablinks" onclick="openInfo(onclick, 'Skills')">Skills</button>
-            <button class="tablinks" onclick="openInfo(onclick, 'Languages')">Languages</button>
+            <button class="tablinks" onclick="openInfo(event, 'Personal')" id="default" data-en="Bio" data-pt="Bio">Bio</button>
+            <button class="tablinks" onclick="openInfo(event, 'Certifications')" data-en="Certifications" data-pt="Certificações">Certifications</button>
+            <button class="tablinks" onclick="openInfo(event, 'Projects')" data-en="Projects" data-pt="Projetos">Projects</button>
+            <button class="tablinks" onclick="openInfo(event, 'Skills')" data-en="Skills" data-pt="Habilidades">Skills</button>
+            <button class="tablinks" onclick="openInfo(event, 'Languages')" data-en="Languages" data-pt="Idiomas">Languages</button>
         </div>
 
         <!-- // Bio -->
         <div id="Personal" class="tabcontent">
             <div id="PersonalText">
-                <p>
-                    <b>
-                        I'm Gabriel Maia, 28 Years, and this is a better look into my resume. I'm from Brazil, but moved to Canada in 2017. <br />
-                        I'm a Computer Programmer, graduated at the Algonquin College. Currently a Microsoft CRM Developer and working for the MNP. <br />
-                        Trying to learn more bits of JS, HTML, CSS and be able to show my learnings
-                    </b>
+                <p data-en="I'm Gabriel Maia, 28 Years, and this is a better look into my resume. I'm from Brazil, but moved to Canada in 2017. I'm a Computer Programmer, graduated at the Algonquin College. Currently a Microsoft CRM Developer and working for the MNP. Trying to learn more bits of JS, HTML, CSS and be able to show my learnings" 
+                   data-pt="Sou Gabriel Maia, 28 anos, e esta é uma visão melhor do meu currículo. Sou do Brasil, mas me mudei para o Canadá em 2017. Sou Programador de Computadores, formado pelo Algonquin College. Atualmente sou Desenvolvedor Microsoft CRM e trabalho para a MNP. Tentando aprender mais sobre JS, HTML, CSS e poder mostrar meus aprendizados">
+                    <b>I'm Gabriel Maia, 28 Years, and this is a better look into my resume. I'm from Brazil, but moved to Canada in 2017. I'm a Computer Programmer, graduated at the Algonquin College. Currently a Microsoft CRM Developer and working for the MNP. Trying to learn more bits of JS, HTML, CSS and be able to show my learnings</b>
                 </p>
             </div>
         </div>
 
         <!-- // Certifications and Courses -->
         <div id="Certifications" class="tabcontent">
-            <h3>Relevant Certifications</h3>
-            <a href="https://www.credly.com/users/gabriel-maia.210cc469">PL-400 -- Power Platform Developer -- Dec, 2022 </a> <br />
+            <h3 data-en="Relevant Certifications" data-pt="Certificações Relevantes">Relevant Certifications</h3>
             <a href="https://www.credly.com/users/gabriel-maia.210cc469">PL-100 -- Power Platform App Maker -- Dec, 2021 </a> <br />
             <a href="https://www.credly.com/users/gabriel-maia.210cc469">PL-200 -- Power Platform Functional Consultant -- Aug, 2021 </a> <br />
-            <h3>Historical Certifications</h3>
+            <a href="https://www.credly.com/users/gabriel-maia.210cc469">PL-400 -- Power Platform Developer -- Dec, 2022 </a> <br />
+            <h3 data-en="Historical Certifications" data-pt="Certificações Históricas">Historical Certifications</h3>
             <a href="https://www.credly.com/users/gabriel-maia.210cc469">MB-200 -- Power Platform + Dynamics 365 Core -- Apr, 2020 </a> <br />
             <a href="https://www.credly.com/users/gabriel-maia.210cc469">MB-230 -- Dynamics 365 Customer Service -- Mar, 2020 </a> <br />
             <a href="https://www.credly.com/users/gabriel-maia.210cc469">MB2-716 -- Dynamics 365 Customization and Configuration -- Feb, 2019 (Expired) </a> <br />
@@ -76,57 +72,69 @@
 
         <!-- // Projects -->
         <div id="Projects" class="tabcontent">
-            <h3>Favorite Projects</h3>
+            <h3 data-en="Favorite Projects" data-pt="Projetos Favoritos">Favorite Projects</h3>
             <lu>
-                <il><b>OCTranspo Bus Timer</b></il>
+                <il><b data-en="OCTranspo Bus Timer" data-pt="Temporizador de Ônibus OCTranspo">OCTranspo Bus Timer</b></il>
             </lu>
         </div>
 
 
         <!-- // Languages -->
         <div id="Languages" class="tabcontent">
-            <b>Portuguese</b>
-            <div class="languageBarContainer">
-                <div class="portLang">
-                    <div class="progressContainer">
-                        <progress value="100" max="100"></progress>
-                        <span class="progressText">Native</span>
+            <div class="languages-container">
+                <div class="language-column">
+                    <b>Portuguese</b>
+                    <div class="languageBarContainer">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-level" data-en="Native" data-pt="Nativo">Native</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <b>English</b>
+                    <div class="languageBarContainer">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-level" data-en="Professional" data-pt="Profissional">Professional</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="100"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <br>
-
-            <b>English</b>
-            <div class="languageBarContainer">
-                <div class="engLang">
-                    <div class="progressContainer">
-                        <progress value="100" max="100"></progress>
-                        <span class="progressText">Professional</span>
+                <div class="language-column">
+                    <b>French</b>
+                    <div class="languageBarContainer">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-level" data-en="Intermediate" data-pt="Intermediário">Intermediate</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="25"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <br>
+                    <br>
 
-            <b>French</b>
-            <div class="languageBarContainer">
-                <div class="frenchLang">
-                    <div class="progressContainer">
-                        <progress value="30" max="100"></progress>
-                        <span class="progressText">Intermediate</span>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <b>Spanish</b>
-            <div class="languageBarContainer">
-                <div class="espLang">
-                    <div class="progressContainer">
-                        <progress value="80" max="100"></progress>
-                        <span class="progressText">Advanced</span>
+                    <b>Spanish</b>
+                    <div class="languageBarContainer">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-level" data-en="Advanced" data-pt="Avançado">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,38 +142,73 @@
 
         <!-- // Skills -->
         <div id="Skills" class="tabcontent">
-            <div class="Skills-Content-Row">
-                <div class="Skills-Content-Column1">
-                    <div class="Skills-Content1">
-                        <b>Android</b>
-                        <div id="myProgress"><div class="testingBar" id="androidBar"></div></div>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3 data-en="Development" data-pt="Desenvolvimento">Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="JavaScript" data-pt="JavaScript">JavaScript</b>
+                            <span class="skill-level" data-en="Advanced" data-pt="Avançado">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="Skills-Content1">
-                        <b>JavaScript</b>
-                        <div id="myProgress"><div class="testingBar" id="javascriptBar"></div></div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="Java" data-pt="Java">Java</b>
+                            <span class="skill-level" data-en="Intermediate" data-pt="Intermediário">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="Skills-Content1">
-                        <b>Microsoft Apps</b>
-                        <div id="myProgress"><div class="testingBar" id="dynamicsBar"></div></div>
-                    </div>
-                </div>
-                <div class="Skills-Content-Column2">
-                    <div class="Skills-Content2">
-                        <b>Java</b>
-                        <div id="myProgress"><div class="testingBar" id="javaBar"></div></div>
-                    </div>
-                    <br>
-                    <div class="Skills-Content2">
-                        <b>Python</b>
-                        <div id="myProgress"><div class="testingBar" id="pythonBar"></div></div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="Python" data-pt="Python">Python</b>
+                            <span class="skill-level" data-en="Intermediate" data-pt="Intermediário">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="70"></div>
+                        </div>
                     </div>
                 </div>
 
+                <div class="skills-column">
+                    <h3 data-en="Platforms & Tools" data-pt="Plataformas e Ferramentas">Platforms & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="Microsoft Power Platform" data-pt="Microsoft Power Platform">Microsoft Power Platform</b>
+                            <span class="skill-level" data-en="Expert" data-pt="Especialista">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="95"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="Dynamics 365" data-pt="Dynamics 365">Dynamics 365</b>
+                            <span class="skill-level" data-en="Expert" data-pt="Especialista">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <b data-en="Android Development" data-pt="Desenvolvimento Android">Android Development</b>
+                            <span class="skill-level" data-en="Intermediate" data-pt="Intermediário">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="65"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
-            <!-- <p><b> This is more of a "confidence-meter". Want to be sure I meet your requirements/needs? Press on the skill and I'll try to show a bit more :)</b></p> -->
         </div>
 
     </section>
@@ -174,38 +217,53 @@
     <!-- // Work -->
     <section class="work">
         <div class="content-wrap">
-            <h2>Work Experience</h2>
+            <h2 data-en="Work Experience" data-pt="Experiência Profissional">Work Experience</h2>
 
             <!-- Work Info #1 -->
             <div class="column-narrow">
-                <h3>Consultant</h3>
-                <p>MNP</p>
-                <p>January 2019 - Present</p>
-            </div>
-            <div class="column-wide">
-                <br><br>
-                    <ul>
-                        <li>
-                            Working with multiple D365 tools, such as Business Process Flow, Power Automate, JS Customization, Power Apps and Power Portals (Using
-                            Liquid and JS)
-                        </li>
-                        <li>Worked on multiple projects simultaneouly with different teams</li>
-                        <li>Responsible for leading team members and new hires on projects</li>
-                        <li>Talked directly to clients and made the decisions on the system architecture</li>
-                    </ul>
-            </div>
-
-            <!-- Work Info #2 -->
-            <div class="column-narrow">
-                <h3>College Tutor</h3>
-                <p>Algonquin College</p>
-                <p>February 2018 - January 2020</p>
+                <h3 data-en="Consultant" data-pt="Consultor">Consultant</h3>
+                <p data-en="MNP" data-pt="MNP">MNP</p>
+                <p data-en="January 2019 - Present" data-pt="Janeiro 2019 - Presente">January 2019 - Present</p>
             </div>
             <div class="column-wide">
                 <br><br>
                 <ul>
-                    <li>More than 100 hours helping students finish many different problems</li>
-                    <li>Taught different courses like Introduction to Java, Android, Database</li>
+                    <li data-en="Working with multiple D365 tools, such as Business Process Flow, Power Automate, JS Customization, Power Apps and Power Portals (Using Liquid and JS)" 
+                        data-pt="Trabalhando com múltiplas ferramentas D365, como Business Process Flow, Power Automate, Customização JS, Power Apps e Power Portals (Usando Liquid e JS)">
+                        Working with multiple D365 tools, such as Business Process Flow, Power Automate, JS Customization, Power Apps and Power Portals (Using Liquid and JS)
+                    </li>
+                    <li data-en="Worked on multiple projects simultaneously with different teams" 
+                        data-pt="Trabalhei em múltiplos projetos simultaneamente com diferentes equipes">
+                        Worked on multiple projects simultaneously with different teams
+                    </li>
+                    <li data-en="Responsible for leading team members and new hires on projects" 
+                        data-pt="Responsável por liderar membros da equipe e novos contratados em projetos">
+                        Responsible for leading team members and new hires on projects
+                    </li>
+                    <li data-en="Talked directly to clients and made the decisions on the system architecture" 
+                        data-pt="Conversava diretamente com clientes e tomava decisões sobre a arquitetura do sistema">
+                        Talked directly to clients and made the decisions on the system architecture
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Work Info #2 -->
+            <div class="column-narrow">
+                <h3 data-en="College Tutor" data-pt="Tutor Universitário">College Tutor</h3>
+                <p data-en="Algonquin College" data-pt="Algonquin College">Algonquin College</p>
+                <p data-en="February 2018 - January 2020" data-pt="Fevereiro 2018 - Janeiro 2020">February 2018 - January 2020</p>
+            </div>
+            <div class="column-wide">
+                <br><br>
+                <ul>
+                    <li data-en="More than 100 hours helping students finish many different problems" 
+                        data-pt="Mais de 100 horas ajudando estudantes a resolver diferentes problemas">
+                        More than 100 hours helping students finish many different problems
+                    </li>
+                    <li data-en="Taught different courses like Introduction to Java, Android, Database" 
+                        data-pt="Ensinei diferentes cursos como Introdução ao Java, Android e Banco de Dados">
+                        Taught different courses like Introduction to Java, Android, Database
+                    </li>
                 </ul>
             </div>
 
@@ -215,37 +273,44 @@
 
     <section class="education">
         <div class="content-wrap">
-            <h2>Education</h2>
+            <h2 data-en="Education" data-pt="Educação">Education</h2>
 
             <!-- Education Info #1 -->
             <div class="study-wrap">
-                <h3>Algonquin College - Ottawa, ON, CA</h3>
+                <h3 data-en="Algonquin College - Ottawa, ON, CA" data-pt="Algonquin College - Ottawa, ON, CA">Algonquin College - Ottawa, ON, CA</h3>
                 <h4>
                     <a target="_blank" href="https://www.algonquincollege.com/sat/program/computer-programmer/#courses">
-                        Computer
-                        Programming Degree, 2017 - 2019
+                        <span data-en="Computer Programming Degree, 2017 - 2019" data-pt="Graduação em Programação de Computadores, 2017 - 2019">
+                            Computer Programming Degree, 2017 - 2019
+                        </span>
                     </a>
                 </h4>
-                <h5>Cumulative GPA: 3.78 -- Dean's Honours List: Fall 2017 (1st term) & Fall 2018 (3rd term) & Fall 2019 (4th term)</h5>
+                <h5 data-en="Cumulative GPA: 3.78 -- Dean's Honours List: Fall 2017 (1st term) & Fall 2018 (3rd term) & Fall 2019 (4th term)" 
+                    data-pt="Média Geral: 3.78 -- Lista de Honra do Diretor: Outono 2017 (1º semestre) & Outono 2018 (3º semestre) & Outono 2019 (4º semestre)">
+                    Cumulative GPA: 3.78 -- Dean's Honours List: Fall 2017 (1st term) & Fall 2018 (3rd term) & Fall 2019 (4th term)
+                </h5>
             </div>
         </div>
     </section>
     <!-- // Footer & contact info -->
     <footer>
         <div class="content-wrap">
-            <h2>How to contact me</h2>
+            <h2 data-en="How to contact me" data-pt="Como me contatar">How to contact me</h2>
 
             <!-- Social media and contact links. Add or remove any networks. -->
             <div class="contact-info">
                 <p>
                     <a href="mailto:gabriel.cardosomaia@gmail.com">
-                        Email: gabriel.cardosomaia@gmail.com
-                    </a><br><br>Cellphone: +1 (613) 668-8481
+                        <span data-en="Email:" data-pt="Email:">Email:</span> gabriel.cardosomaia@gmail.com
+                    </a><br><br>
+                    <span data-en="Cellphone:" data-pt="Celular:">Cellphone:</span> +1 (613) 668-8481
                 </p>
             </div>
             <div class="copyright">
                 <p>
-                    pictures and logos from <a href="https://icons8.com/" color: #FFFF>icons8</a><br>Copyright 2019 by
+                    <span data-en="pictures and logos from" data-pt="imagens e logos de">pictures and logos from</span> 
+                    <a href="https://icons8.com/" color: #FFFF>icons8</a><br>
+                    <span data-en="Copyright 2019 by" data-pt="Copyright 2019 por">Copyright 2019 by</span>
                     Gabriel Maia
                 </p>
             </div>
