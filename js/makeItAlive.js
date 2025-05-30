@@ -1,7 +1,8 @@
 $(document).ready(function(){
-
-	new Typed('#typed',{
-		
+	console.log('Document ready - Initializing...');
+	
+	// Initialize Typed.js
+	var typed = new Typed('#typed', {
 		strings: ['Seeing something new @ MNP ' ,'Playing something', 'Watching some SpiderMan Movie',
 		'Getting frustrated while coding','Getting amazed while coding' ,'Talking to some friends', 'Learning something new', 
 		'Trying to help someone', 'Understanding some new microsoft tool', 'looking for some spiderman content', 'Giving some tutoring', 
@@ -12,31 +13,40 @@ $(document).ready(function(){
 		showCursor: true,
 		backDelay: 1700,
 	});
+	console.log('Typed.js initialized');
 
 	document.getElementById("default").click();
+	console.log('Default tab clicked');
 
 	// Initialize language switcher
 	const langSwitch = document.getElementById('langSwitch');
 	if (langSwitch) {
+		console.log('Language switch button found');
 		langSwitch.addEventListener('click', function(e) {
+			console.log('Language switch clicked');
 			e.preventDefault();
 			toggleLanguage();
 		});
+	} else {
+		console.log('Language switch button NOT found!');
 	}
-
 });
 
 // Language switching functionality
 let currentLang = 'en';
 
 function toggleLanguage() {
+	console.log('toggleLanguage called, current language:', currentLang);
+	
 	// Toggle the language
 	currentLang = currentLang === 'en' ? 'pt' : 'en';
+	console.log('New language set to:', currentLang);
 	
 	// Update the button text
 	const langSwitch = document.getElementById('langSwitch');
 	if (langSwitch) {
 		langSwitch.textContent = currentLang === 'en' ? 'PT' : 'EN';
+		console.log('Button text updated to:', langSwitch.textContent);
 	}
 	
 	// Update all translatable content
@@ -44,56 +54,41 @@ function toggleLanguage() {
 }
 
 function updateLanguage() {
+	console.log('updateLanguage called');
+	
 	// Update all elements with data attributes
-	document.querySelectorAll('[data-en]').forEach(element => {
+	const elements = document.querySelectorAll('[data-en], [data-pt]');
+	console.log('Found elements to translate:', elements.length);
+	
+	elements.forEach(element => {
 		const newText = element.getAttribute(`data-${currentLang}`);
+		console.log('Element:', element.tagName, 'Current text:', element.textContent, 'New text:', newText);
+		
 		if (newText) {
 			if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
 				element.value = newText;
+			} else if (element.tagName === 'LI') {
+				// For list items, update the text content directly
+				element.textContent = newText;
 			} else {
-				// Store the original content if it's the first time
-				if (!element.hasAttribute('data-original')) {
-					element.setAttribute('data-original', element.textContent);
-				}
+				// For other elements, update the text content
 				element.textContent = newText;
 			}
 		}
 	});
 
-	// Update tab buttons
-	document.querySelectorAll('.tablinks').forEach(button => {
-		const newText = button.getAttribute(`data-${currentLang}`);
+	// Special handling for list items that might have nested elements
+	document.querySelectorAll('.work li').forEach(li => {
+		const newText = li.getAttribute(`data-${currentLang}`);
 		if (newText) {
-			button.textContent = newText;
-		}
-	});
-
-	// Update skill levels
-	document.querySelectorAll('.skill-level').forEach(level => {
-		const newText = level.getAttribute(`data-${currentLang}`);
-		if (newText) {
-			level.textContent = newText;
-		}
-	});
-
-	// Update progress text
-	document.querySelectorAll('.progressText').forEach(text => {
-		const newText = text.getAttribute(`data-${currentLang}`);
-		if (newText) {
-			text.textContent = newText;
-		}
-	});
-
-	// Update all elements with data-en and data-pt attributes
-	document.querySelectorAll('[data-en], [data-pt]').forEach(element => {
-		const newText = element.getAttribute(`data-${currentLang}`);
-		if (newText) {
-			element.textContent = newText;
+			li.textContent = newText;
 		}
 	});
 }
 
 function openInfo(evt, infoName) {
+	console.log('openInfo called for tab:', infoName);
+	
 	// Hide all tab content
 	const tabcontent = document.getElementsByClassName("tabcontent");
 	for (let i = 0; i < tabcontent.length; i++) {
@@ -108,14 +103,14 @@ function openInfo(evt, infoName) {
 
 	// Show the selected tab content and mark the button as active
 	document.getElementById(infoName).style.display = "block";
-	if (evt && evt.currentTarget) {
-		evt.currentTarget.className += " active";
-	}
+	evt.currentTarget.className += " active";
 
 	// Handle animations based on the selected tab
 	if (infoName === "Languages") {
+		console.log('Animating Languages tab');
 		setTimeout(() => {
 			const skillBars = document.querySelectorAll("#Languages .skill-progress");
+			console.log('Found language bars:', skillBars.length);
 			skillBars.forEach(bar => {
 				const level = bar.getAttribute("data-level");
 				// Reset animation
@@ -130,8 +125,10 @@ function openInfo(evt, infoName) {
 	}
 	
 	if (infoName === "Skills") {
+		console.log('Animating Skills tab');
 		setTimeout(() => {
 			const skillBars = document.querySelectorAll("#Skills .skill-progress");
+			console.log('Found skill bars:', skillBars.length);
 			skillBars.forEach(bar => {
 				const level = bar.getAttribute("data-level");
 				// Reset animation

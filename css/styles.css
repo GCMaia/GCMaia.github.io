@@ -63,9 +63,10 @@ footer {
 }
 
 header {
-  min-height: 425px;  /* Added fixed minimum height */
+  min-height: 450px;  /* Added fixed minimum height */
   position: relative; /* Added for proper positioning */
   padding: 20px 0;   /* Added padding */
+  padding-top: 40px;
 }
 
 header h1,
@@ -75,11 +76,12 @@ header h2 {
 
 /* Header styles only */
 .social-icons {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 15px;
+    position: fixed;
+    top: 40px; /* Position below the banner */
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
 }
 
 .github,
@@ -411,8 +413,7 @@ progress.animate::-moz-progress-bar {
   }
   
   .social-icons {
-    position: absolute;
-    top: 15px;
+    top: 40px; /* Keep below banner on mobile */
     right: 15px;
     gap: 10px;
   }
@@ -546,7 +547,7 @@ progress.animate::-moz-progress-bar {
   }
   
   .social-icons {
-    top: 10px;
+    top: 40px; /* Keep below banner on small mobile */
     right: 10px;
     gap: 8px;
   }
@@ -794,16 +795,20 @@ progress.animate::-moz-progress-bar {
 }
 
 /* Language-specific colors */
-.skill-progress[data-level="100"] {
-    background-color: #4CAF50; /* Green for Native/Professional */
+.skill-progress[data-lang="portuguese"] {
+    background-color: #4CAF50; /* Green for Portuguese */
 }
 
-.skill-progress[data-level="75"] {
-    background-color: #2196F3; /* Blue for Advanced */
+.skill-progress[data-lang="english"] {
+    background-color: #FFC107; /* Yellow for English */
 }
 
-.skill-progress[data-level="25"] {
-    background-color: #FFC107; /* Yellow for Intermediate */
+.skill-progress[data-lang="french"] {
+    background-color: #2196F3; /* Blue for French */
+}
+
+.skill-progress[data-lang="spanish"] {
+    background-color: #FF9800; /* Orange for Spanish */
 }
 
 @media screen and (max-width: 768px) {
@@ -844,6 +849,7 @@ progress.animate::-moz-progress-bar {
     top: 20px;
     left: 20px;
     z-index: 1000;
+    display: none;
 }
 
 #langSwitch {
@@ -885,4 +891,19 @@ progress.animate::-moz-progress-bar {
         padding: 3px 6px;
         font-size: 11px;
     }
+}
+
+/* Work in Progress Banner */
+.wip-banner {
+    background-color: #FFD700;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

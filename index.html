@@ -9,7 +9,7 @@
     <!-- Load jQuery first -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Then load other scripts -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script type="text/javascript" src="js/makeItAlive.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <!--<link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">-->
@@ -18,6 +18,8 @@
 </head>
 
 <body>
+    <div class="wip-banner">🚧 Work in Progress 🚧</div>
+    
     <!-- // Intro -->
     <header>
         <div class="content-wrap">
@@ -32,7 +34,7 @@
             <div class="column-wide">
                 <h1>Gabriel Maia </h1>
                 <h2 data-en="D365 Developer and Consultant" data-pt="Desenvolvedor e Consultor D365">D365 Developer and Consultant</h2>
-                <h3 data-en="I'm Probably:" data-pt="Provavelmente estou:">I'm Probably: <b id="typed"></b></h3>
+                <h3 data-en="I'm Probably:" data-pt="Provavelmente estou:">I'm Probably: <span id="typed"></span></h3>
             </div>
         </div>
     </header>
@@ -90,7 +92,7 @@
                                 <span class="skill-level" data-en="Native" data-pt="Nativo">Native</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-level="100"></div>
+                                <div class="skill-progress" data-level="100" data-lang="portuguese"></div>
                             </div>
                         </div>
                     </div>
@@ -104,7 +106,7 @@
                                 <span class="skill-level" data-en="Professional" data-pt="Profissional">Professional</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-level="100"></div>
+                                <div class="skill-progress" data-level="100" data-lang="english"></div>
                             </div>
                         </div>
                     </div>
@@ -115,10 +117,10 @@
                     <div class="languageBarContainer">
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-level" data-en="Intermediate" data-pt="Intermediário">Intermediate</span>
+                                <span class="skill-level" data-en="Beginner" data-pt="Iniciante">Beginner</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-level="25"></div>
+                                <div class="skill-progress" data-level="25" data-lang="french"></div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +134,7 @@
                                 <span class="skill-level" data-en="Advanced" data-pt="Avançado">Advanced</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-level="75"></div>
+                                <div class="skill-progress" data-level="75" data-lang="spanish"></div>
                             </div>
                         </div>
                     </div>
@@ -191,7 +193,7 @@
                     <div class="skill-item">
                         <div class="skill-header">
                             <b data-en="Dynamics 365" data-pt="Dynamics 365">Dynamics 365</b>
-                            <span class="skill-level" data-en="Expert" data-pt="Especialista">Expert</span>
+                            <span class="skill-level" data-en="Expert" data-pt="Especialista">Expert</span>                            
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" data-level="90"></div>
